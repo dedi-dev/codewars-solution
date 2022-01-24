@@ -37,3 +37,25 @@ const findOdd1 = (xs: number[]): number => {
   };
   
   findOdd1([1,1,1,1,1,1,10,1,1,1,1])
+
+  //PRINT ERROR
+
+  function printerError (s: string): string {
+    // your code
+    const length: number = s.length;
+    const textToArray: string[] = s.split("");
+    let numOfError: number = 0;
+    textToArray.forEach((e) => {
+      if (e.match(/[n-zN-Z]+/g)) {
+        numOfError += 1;
+      }
+    });
+    console.log(`${numOfError}/${length}`);
+    return `${numOfError}/${length}`;
+  }
+
+  function printerError1(s: string): string {
+    return `${s.replace(/[a-m]/ig, '').length}/${s.length}`;
+  }
+
+  printerError("aaaxbbbbyyhwawiwjjjwwm");
