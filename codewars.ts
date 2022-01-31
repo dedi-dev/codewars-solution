@@ -59,3 +59,20 @@ const findOdd1 = (xs: number[]): number => {
   }
 
   printerError("aaaxbbbbyyhwawiwjjjwwm");
+
+  //TWO OLDEST AGES
+
+  function twoOldestAges2(ages: number[]): number[] {
+    return ages.sort((a, b) => a - b).slice(ages.length - 2);
+  }
+
+  function twoOldestAges(ages: number[]): number[] {
+    ages.sort(function(a: number, b: number): number {
+      return a - b;
+    })
+  
+    console.log([ages[ages.length-2], ages[ages.length-1]])
+    return [ages[ages.length-2], ages[ages.length-1]];
+  }
+  
+  twoOldestAges([5,3,7,1,3,2,8])
