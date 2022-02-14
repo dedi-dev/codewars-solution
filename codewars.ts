@@ -76,3 +76,11 @@ const findOdd1 = (xs: number[]): number => {
   }
   
   twoOldestAges([5,3,7,1,3,2,8])
+
+  // 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+  export function narcissistic(value: number): any {
+    const separatedNums: number[] = Array.from(value.toString(), Number);
+    const multiplicator = separatedNums.length;
+    const processedNum = separatedNums.reduce((acc, curr) => acc += curr ** multiplicator, 0)
+    return processedNum === value; 
+  }
